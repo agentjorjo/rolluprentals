@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll Up Rentals - Dumpster, Storage & Mobile Office Rentals in LA</title>
+    <meta name="description" content="Roll Up Rentals provides dumpster, storage container, and mobile office rentals throughout Los Angeles with 13+ years of experience. Serving Hollywood, Downtown LA, San Fernando Valley, West LA & South Bay.">
+    <meta name="keywords" content="dumpster rental Los Angeles, storage container rental LA, mobile office rental Hollywood, scissor lift rental Downtown LA, equipment rental San Fernando Valley, West LA construction equipment, South Bay waste management, LA equipment rentals">
+    <!-- JSON-LD Structured Data for Local SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Roll Up Rentals",
+      "image": "https://example.com/logo.png",
+      "@id": "https://rolluprentals.com",
+      "url": "https://rolluprentals.com",
+      "telephone": "1-800-RAPID-WASTE",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Los Angeles Area",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "postalCode": "90001",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.0522,
+        "longitude": -118.2437
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "06:00",
+        "closes": "18:00"
+      }],
+      "servesArea": [
+        "Hollywood",
+        "Downtown Los Angeles",
+        "San Fernando Valley",
+        "West Los Angeles",
+        "South Bay",
+        "Los Angeles County"
+      ],
+      "department": [
+        {
+          "@type": "HomeAndConstructionBusiness",
+          "name": "Roll Up Rentals Dumpster Rentals",
+          "url": "https://rolluprentals.com/dumpster-rentals.html"
+        },
+        {
+          "@type": "HomeAndConstructionBusiness",
+          "name": "Roll Up Rentals Storage Containers",
+          "url": "https://rolluprentals.com/storage-containers.html"
+        },
+        {
+          "@type": "HomeAndConstructionBusiness",
+          "name": "Roll Up Rentals Mobile Offices",
+          "url": "https://rolluprentals.com/mobile-offices.html"
+        }
+      ]
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        header .logo h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        header .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Los Angeles Skyline Banner */
+        .la-banner {
+            background: linear-gradient(rgba(30, 58, 138, 0.6), rgba(59, 130, 246, 0.6)),
+                      url('https://images.unsplash.com/photo-1449824913935-5d608d6450e3?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 3rem 0;
+            color: white;
+            position: relative;
+        }
+        
+        .la-banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .la-banner-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .la-banner h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .la-banner p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(59, 130, 246, 0.8)); 
+                      /* url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80') */;
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary, .btn-secondary {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: #ffcc00;
+            color: #1e3a8a;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
+            background: #ffd633;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        .phone-highlight {
+            display: block;
+            background: #ffcc00;
+            color: #1e3a8a;
+            padding: 12px 20px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border-radius: 30px;
+            margin: 1.5rem 0;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .features {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .features h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1e3a8a;
+            font-size: 2.2rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: #f8f9ff;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: #1e3a8a;
+        }
+        
+        .services {
+            padding: 4rem 0;
+            background: #f8f9ff;
+        }
+        
+        .services h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1e3a8a;
+            font-size: 2.2rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #ffcc00;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .service-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card ul {
+            list-style: none;
+        }
+        
+        .service-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .service-card li:last-child {
+            border-bottom: none;
+        }
+        
+        .service-card li::before {
+            content: "✓";
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        
+        .about {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .experience-badge {
+            background: linear-gradient(135deg, #ffcc00, #ffd633);
+            color: #1e3a8a;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+            margin: 1.5rem 0;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .footer {
+            background: #1e3a8a;
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer h3 {
+            margin-bottom: 1.5rem;
+            color: #ffcc00;
+        }
+        
+        .footer ul {
+            list-style: none;
+        }
+        
+        .footer li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .la-banner {
+                padding: 2rem 0;
+            }
+            
+            .la-banner h2 {
+                font-size: 1.5rem;
+            }
+            
+            .la-banner p {
+                font-size: 1rem;
+            }
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                background: rgba(30, 58, 138, 0.95);
+                width: 80%;
+                max-width: 300px;
+                height: calc(100vh - 70px);
+                flex-direction: column;
+                padding: 2rem;
+                transition: right 0.3s ease;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div>🗑️</div>
+                    <div>
+                        <h1>Roll Up Rentals</h1>
+                        <p>LA's Trusted Rental Experts</p>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dumpster-rentals.html">Dumpster Rentals</a></li>
+                    <li><a href="storage-containers.html">Storage Containers</a></li>
+                    <li><a href="mobile-offices.html">Mobile Offices</a></li>
+                    <li><a href="about.html">About Us</a></li
+                    <li><a href="service-locations.html">Service Locations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Los Angeles Skyline Banner -->
+    <section class="la-banner">
+        <div class="banner-content">
+            <h2>Serving Los Angeles Since 2013</h2>
+            <p>Roll Up Rentals - Your Trusted Partner for Equipment Rentals Across LA County</p>
+        </div>
+    </section>
+
+    <section class="hero">
+        <div class="hero-content container">
+            <h2>Los Angeles' Premier Dumpster, Storage & Mobile Office Rentals</h2>
+            <p>Serving contractors and construction companies throughout LA County for 13+ years</p>
+            <div class="phone-highlight">📞 CALL NOW FOR PRICING: (323) 555-RENT</div>
+            <div class="cta-buttons">
+                <a href="tel:+13235557368" class="btn-primary">CALL NOW FOR PRICING</a>
+                <a href="contact.html" class="btn-secondary">GET A QUOTE ONLINE</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Why Contractors Choose Roll Up Rentals</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Fast Delivery & Pickup</h3>
+                    <p>Same-day and next-day service available throughout Los Angeles County. We understand project timelines and work around your schedule.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Contractor-Friendly Pricing</h3>
+                    <p>Competitive rates with transparent pricing. No hidden fees - just straightforward rates that help you stay on budget.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Fully Licensed & Insured</h3>
+                    <p>All equipment is properly maintained, permitted, and insured. We handle all the paperwork so you can focus on your project.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📞</div>
+                    <h3>24/7 Customer Support</h3>
+                    <p>Our team is available around the clock for emergencies, changes, or questions. We're here when you need us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2>Our Rental Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Dumpster Rentals</h3>
+                    <p>From small residential cleanouts to large construction projects, we have the right dumpster for your needs.</p>
+                    <ul>
+                        <li>10, 20, 30, and 40-yard containers</li>
+                        <li>Construction debris disposal</li>
+                        <li>Household junk removal</li>
+                        <li>Green waste and recycling</li>
+                        <li>Concrete and heavy materials</li
+                        <li>Flexible rental periods</li>
+                    </ul>
+                    <a href="dumpster-rentals.html" style="display:inline-block; margin-top:1rem; color:#1e3a8a; font-weight:bold;">Learn More →</a>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Storage Containers</h3>
+                    <p>Secure, weatherproof storage solutions for tools, equipment, and materials on your job site.</p>
+                    <ul>
+                        <li>20ft and 40ft shipping containers</li
+                        <li>Ground-level access</li>
+                        <li>Lockable and secure</li>
+                        <li>Weatherproof and rodent-proof</li>
+                        <li>Short-term and long-term rentals</li>
+                        <li>Delivery and pickup included</li>
+                    </ul>
+                    <a href="storage-containers.html" style="display:inline-block; margin-top:1rem; color:#1e3a8a; font-weight:bold;">Learn More →</a>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Mobile Offices</h3>
+                    <p>Climate-controlled mobile office units for project management, meetings, and on-site administration.</p>
+                    <ul>
+                        <li>Heating and air conditioning</li>
+                        <li>Electrical outlets and lighting</li>
+                        <li>Insulated for comfort</li
+                        <li>ADA-compliant options available</li>
+                        <li>Furniture and setup included</li>
+                        <li>Internet and phone hookups</li>
+                    </ul>
+                    <a href="mobile-offices.html" style="display:inline-block; margin-top:1rem; color:#1e3a8a; font-weight:bold;">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Roll Up Rentals</h2>
+                    <p>For over 13 years, Roll Up Rentals has been serving the Los Angeles construction and contractor community with reliable, professional rental services. We understand the unique challenges faced by contractors in the LA area and have built our business around solving those specific pain points.</p>
+                    <p>Our family-owned business combines decades of industry experience with a commitment to exceptional customer service. We're not just another rental company - we're your partners in getting the job done right, on time, and on budget.</p>
+                    <div class="experience-badge">13+ Years Serving LA Contractors</div>
+                    <p>Our deep roots in the Los Angeles community mean we understand local regulations, permit requirements, and the specific needs of Southern California construction projects. From downtown high-rises to suburban renovations, we've got the experience to handle it all.</p>
+                </div>
+                <div class="about-image">
+                    <div style="height: 400px; background: linear-gradient(135deg, #1e3a8a, #3b82f6); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                        🏗️
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Get fast, reliable service from LA's most experienced rental company. Our team is standing by to help you choose the right solution for your needs.</p>
+            <div class="phone-highlight">📞 CALL NOW FOR IMMEDIATE SERVICE: (323) 555-RENT</div>
+            <div class="cta-buttons">
+                <a href="tel:+13235557368" class="btn-primary">CALL NOW FOR PRICING</a>
+                <a href="contact.html" class="btn-secondary">GET A FREE QUOTE</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Roll Up Rentals</h3>
+                    <p>Serving Los Angeles County with pride for over 13 years. We're dedicated to providing contractors with the reliable rental solutions they need to succeed.</p>
+                </div>
+                <div>
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="dumpster-rentals.html">Dumpster Rentals</a></li>
+                        <li><a href="storage-containers.html">Storage Containers</a></li>
+                        <li><a href="mobile-offices.html">Mobile Offices</a></li>
+                    </ul>
+                </div
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="tel:+13235557368">Call Now: (323) 555-RENT</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contact Information</h3>
+                    <ul>
+                        <li>📞 Phone: (323) 555-RENT (7368)</li>
+                        <li>📧 Email: info@rolluprentals.com</li>
+                        <li>📍 Location: Los Angeles, CA</li>
+                        <li>🕒 Hours: Mon-Fri 6:00 AM - 6:00 PM, Sat 7:00 AM - 4:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Roll Up Rentals. All rights reserved. Serving Los Angeles, Orange, Ventura, Riverside, and San Bernardino counties.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+            
+            mobileToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Locations - Roll Up Rentals Serving All of Greater Los Angeles Area</title>
+    <meta name="description" content="Roll Up Rentals provides equipment rentals to all cities and communities within 120 miles of Downtown Los Angeles. Check our comprehensive service area covering Los Angeles, Orange, Ventura, Riverside, San Bernardino counties and more.">
+    <meta name="keywords" content="Los Angeles equipment rentals, Orange County dumpster rentals, Ventura County storage containers, Riverside County mobile offices, San Bernardino County scissor lifts, service area Los Angeles, equipment rental service area">
+    <!-- JSON-LD Structured Data for Local SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Roll Up Rentals",
+      "image": "https://example.com/logo.png",
+      "@id": "https://rolluprentals.com",
+      "url": "https://rolluprentals.com/service-locations.html",
+      "telephone": "1-800-RAPID-WASTE",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Los Angeles Area",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "postalCode": "90001",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.0522,
+        "longitude": -118.2437
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "06:00",
+        "closes": "18:00"
+      }],
+      "servesArea": [
+        "Los Angeles County",
+        "Orange County",
+        "Ventura County",
+        "San Bernardino County",
+        "Riverside County",
+        "Santa Barbara County",
+        "Kern County",
+        "San Luis Obispo County",
+        "San Diego County"
+      ],
+      "department": [
+        {
+          "@type": "HomeAndConstructionBusiness",
+          "name": "Roll Up Rentals Dumpster Rentals",
+          "url": "https://rolluprentals.com/dumpster-rentals.html"
+        },
+        {
+          "@type": "HomeAndConstructionBusiness",
+          "name": "Roll Up Rentals Storage Containers",
+          "url": "https://rolluprentals.com/storage-containers.html"
+        },
+        {
+          "@type": "HomeAndConstructionBusiness",
+          "name": "Roll Up Rentals Mobile Offices",
+          "url": "https://rolluprentals.com/mobile-offices.html"
+        }
+      ]
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        header .logo h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        header .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .la-banner {
+            background: linear-gradient(rgba(30, 58, 138, 0.6), rgba(59, 130, 246, 0.6)),
+                      url('https://images.unsplash.com/photo-1449824913935-5d608d6450e3?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+            position: relative;
+        }
+        
+        .la-banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .la-banner-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .la-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .la-banner p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(59, 130, 246, 0.8)); 
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn-primary, .btn-secondary {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: #ffcc00;
+            color: #1e3a8a;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
+            background: #ffd633;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        .services {
+            background: white;
+            padding: 3rem 0;
+        }
+        
+        .services h2 {
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .services p {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #555;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            background: #f8f9ff;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+        
+        .service-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .service-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #1e3a8a;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .service-card a:hover {
+            text-decoration: underline;
+        }
+        
+        .county-breakdown {
+            background: #f8f9ff;
+            padding: 3rem 0;
+        }
+        
+        .county-breakdown h2 {
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .county-section {
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .county-section h3 {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            padding: 1.5rem;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .county-section-content {
+            padding: 2rem;
+        }
+        
+        .county-section p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        .areas-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .area-item {
+            background: #f0f7ff;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+        
+        .benefits {
+            background: white;
+            padding: 3rem 0;
+        }
+        
+        .benefits h2 {
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit-item {
+            background: #f8f9ff;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #ffcc00;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+        
+        .benefit-item h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-item p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .footer {
+            background: #1e3a8a;
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer h3 {
+            margin-bottom: 1.5rem;
+            color: #ffcc00;
+        }
+        
+        .footer ul {
+            list-style: none;
+        }
+        
+        .footer li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .la-banner {
+                padding: 3rem 0;
+            }
+            
+            .la-banner h2 {
+                font-size: 1.8rem;
+            }
+            
+            .la-banner p {
+                font-size: 1.1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .services-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .areas-list {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                background: rgba(30, 58, 138, 0.95);
+                width: 80%;
+                max-width: 300px;
+                height: calc(100vh - 70px);
+                flex-direction: column;
+                padding: 2rem;
+                transition: right 0.3s ease;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div>🗑️</div>
+                    <div>
+                        <h1>Roll Up Rentals</h1>
+                        <p>LA's Trusted Rental Experts</p>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dumpster-rentals.html">Dumpster Rentals</a></li>
+                    <li><a href="storage-containers.html">Storage Containers</a></li>
+                    <li><a href="mobile-offices.html">Mobile Offices</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service-locations.html" class="active">Service Locations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Los Angeles Skyline Banner -->
+    <section class="la-banner">
+        <div class="banner-content">
+            <h2>Serving All of Greater Los Angeles Since 2013</h2>
+            <p>Roll Up Rentals - Your Trusted Partner for Equipment Rentals Across 120-Mile Radius of Downtown LA</p>
+        </div>
+    </section>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Comprehensive Service Area</h1>
+            <p>Roll Up Rentals proudly serves all cities, communities, and areas within approximately 120 miles of Downtown Los Angeles</p>
+            <div class="cta-buttons">
+                <a href="#service-details" class="btn-primary">Learn About Our Services</a>
+                <a href="tel:+1-800-RAPID-WASTE" class="btn-secondary">Call Now for Availability</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="service-details" class="services">
+        <div class="container">
+            <h2>Our Complete Service Area</h2>
+            <p>We provide dumpster rentals, storage containers, and mobile offices to every city and community within our 120-mile service radius. Our extensive coverage ensures fast, reliable service wherever your project is located.</p>
+            
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>Los Angeles County</h3>
+                    <p>All 88 incorporated cities and numerous unincorporated communities including Hollywood, Downtown LA, San Fernando Valley, West LA, South Bay, Santa Clarita, Antelope Valley, and Gateway Cities</p>
+                    <a href="#los-angeles-county" class="btn-link">View Details</a>
+                </div>
+                <div class="service-card">
+                    <h3>Orange County</h3>
+                    <p>All 34 incorporated cities including Anaheim, Irvine, Huntington Beach, Newport Beach, Santa Ana, and Mission Viejo</p>
+                    <a href="#orange-county" class="btn-link">View Details</a>
+                </div>
+                <div class="service-card">
+                    <h3>Ventura County</h3>
+                    <p>All 10 incorporated cities including Oxnard, Thousand Oaks, Simi Valley, Ventura, and Camarillo</p>
+                    <a href="#ventura-county" class="btn-link">View Details</a>
+                </div>
+                <div class="service-card">
+                    <h3>San Bernardino County</h3>
+                    <p>Western portions including San Bernardino, Ontario, Rancho Cucamonga, Fontana, and surrounding communities</p>
+                    <a href="#san-bernardino-county" class="btn-link">View Details</a>
+                </div>
+                <div class="service-card">
+                    <h3>Riverside County</h3>
+                    <p>Western and central portions including Riverside, Corona, Temecula, Murrieta, and the Coachella Valley area</p>
+                    <a href="#riverside-county" class="btn-link">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed County Breakdown -->
+    <section class="county-breakdown">
+        <div class="container">
+            <h2>Detailed Service Areas by County</h2>
+            
+            <div id="los-angeles-county" class="county-section">
+                <div class="county-section-content">
+                    <h3>Los Angeles County</h3>
+                    <p>As our primary service area, we serve all incorporated cities and communities in Los Angeles County:</p>
+                    <div class="areas-list">
+                        <div class="area-item">Agoura Hills</div>
+                        <div class="area-item">Alhambra</div>
+                        <div class="area-item">Arcadia</div>
+                        <div class="area-item">Artesia</div>
+                        <div class="area-item">Avalon</div>
+                        <div class="area-item">Azusa</div>
+                        <div class="area-item">Baldwin Park</div>
+                        <div name="&#34;area-item&#34;">Bell</div>
+                        <div class="area-item">Bell Gardens</div>
+                        <div class="area-item">Bellflower</div>
+                        <div class="area-item">Beverly Hills</div>
+                        <div class="area-item">Bradbury</div>
+                        <div class="area-item">Burbank</div>
+                        <div class="area-item">Calabasas</div>
+                        <div class="area-item">Carson</div>
+                        <div class="area-item">Cerritos</div>
+                        <div class="area-item">Claremont</div>
+                        <div class="area-item">Commerce</div>
+                        <div class="area-item">Compton</div>
+                        <div class="area-item">Covina</div>
+                        <div class="area-item">Cudahy</div>
+                        <div class="area-item">Culver City</div>
+                        <div class="area-item">Diamond Bar</div>
+                        <div class="area-item">Downey</div>
+                        <div class="area-item">Duarte</div>
+                        <div class="area-item">El Monte</div>
+                        <div class="area-item">El Segundo</div>
+                        <div class="area-item">Gardena</div>
+                        <div class="area-item">Glendale</div>
+                        <div class="area-item">Glendora</div>
+                        <div class="area-item">Hawaiian Gardens</div>
+                        <div class="area-item">Hawthorne</div>
+                        <div class="area-item">Hermosa Beach</div>
+                        <div class="area-item">Hidden Hills</div>
+                        <div class="area-item">Huntington Park</div>
+                        <div class="area-item">Industry</div
+                        <div class="area-item">Inglewood</div>
+                        <div class="area-item">Irwindale</div
+                        <div class="area-item">La Cañada Flintridge</div>
+                        <div class="area-item">La Habra Heights</div>
+                        <div class="area-item">La Mirada</div>
+                        <div class="area-item">La Puente</div>
+                        <div class="area-item">La Verne</div>
+                        <div class="area-item">Lakewood</div>
+                        <div class="area-item">Lancaster</div>
+                        <div class="area-item">Lawndale</div>
+                        <div class="area-item">Lomita</div>
+                        <div class="area-item">Long Beach</div>
+                        <div class="area-item">Los Angeles</div>
+                        <div class="area-item">Lynwood</div>
+                        <div class="area-item">Malibu</div>
+                        <div class="area-item">Manhattan Beach</div>
+                        <div class="area-item">Maywood</div>
+                        <div class="area-item">Monrovia</div>
+                        <div class="area-item">Montebello</div>
+                        <div class="area-item">Monterey Park</div>
+                        <div class="area-item">Norwalk</div>
+                        <div class="area-item">Palmdale</div>
+                        <div class="area-item">Palos Verdes Estates</div>
+                        <div class="area-item">Paramount</div>
+                        <div class="area-item">Pasadena</div>
+                        <div class="area-item">Pico Rivera</div>
+                        <div class="area-item">Pomona</div>
+                        <div class="area-item">Rancho Palos Verdes</div>
+                        <div class="area-item">Redondo Beach</div>
+                        <div class="area-item">Rolling Hills</div>
+                        <div class="area-item">Rolling Hills Estates</div>
+                        <div class="area-item">Rosemead</div>
+                        <div class="area-item">San Dimas</div>
+                        <div class="area-item">San Fernando</div>
+                        <div class="area-item">San Gabriel</div>
+                        <div class="area-item">San Marino</div>
+                        <div class="area-item">Santa Clarita</div>
+                        <div class="area-item">Santa Fe Springs</div>
+                        <div class="area-item">Santa Monica</div>
+                        <div class="area-item">Sierra Madre</div>
+                        <div class="area-item">Signal Hill</div>
+                        <div class="area-item">South El Monte</div>
+                        <div class="area-item">South Gate</div>
+                        <div class="area-item">South Pasadena</div>
+                        <div class="area-item">Temple City</div>
+                        <div class="area-item">Torrance</div>
+                        <div class="area-item">Vernon</div>
+                        <div class="area-item">Walnut</div>
+                        <div class="area-item">West Covina</div>
+                        <div class="area-item">West Hollywood</div>
+                        <div class="area-item">Westlake Village</div>
+                        <div class="area-item">Whittier</div>
+                    </div>
+                    <p><em>Plus all unincorporated communities and neighborhoods throughout Los Angeles County</em></p>
+                </div>
+            </div>
+
+            <div id="orange-county" class="county-section">
+                <div class="county-section-content">
+                    <h3>Orange County</h3>
+                    <p>We proudly serve all cities and communities throughout Orange County:</p>
+                    <div class="areas-list">
+                        <div class="area-item">Aliso Viejo</div>
+                        <div class="area-item">Anaheim</div>
+                        <div class="area-item">Brea</div>
+                        <div class="area-item">Buena Park</div>
+                        <div class="area-item">Costa Mesa</div>
+                        <div class="area-item">Cypress</div>
+                        <div class="area-item">Dana Point</div>
+                        <div class="area-item">Fountain Valley</div>
+                        <div class="area-item">Fullerton</div>
+                        <div class="area-item">Garden Grove</div>
+                        <div class="area-item">Huntington Beach</div>
+                        <div class="area-item">Irvine</div>
+                        <div class="area-item">La Habra</div>
+                        <div class="area-item">La Palma</div
+                        <div class="area-item">Laguna Beach</div>
+                        <div class="area-item">Laguna Hills</div>
+                        <div class="area-item">Laguna Niguel</div>
+                        <div class="area-item">Laguna Woods</div>
+                        <div class="area-item">Lake Forest</div>
+                        <div class="area-item">Los Alamitos</div>
+                        <div class="area-item">Mission Viejo</div>
+                        <div class="area-item">Newport Beach</div>
+                        <div class="area-item">Orange</div>
+                        <div class="area-item">Placentia</div>
+                        <div class="area-item">Rancho Santa Margarita</div>
+                        <div class="area-item">San Clemente</div
+                        <div class="area-item">San Juan Capistrano</div>
+                        <div class="area-item">Santa Ana</div>
+                        <div class="area-item">Seal Beach</div>
+                        <div class="area-item">Stanton</div>
+                        <div class="area-item">Tustin</div>
+                        <div class="area-item">Villa Park</div>
+                        <div class="area-item">Westminster</div>
+                        <div class="area-item">Yorba Linda</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ventura-county" class="county-section">
+                <div class="county-section-content">
+                    <h3>Ventura County</h3>
+                    <p>Our service extends to all incorporated cities and communities in Ventura County:</p>
+                    <div class="areas-list">
+                        <div class="area-item">Camarillo</div>
+                        <div class="area-item">Fillmore</div>
+                        <div class="area-item">Moorpark</div>
+                        <div class="area-item">Ojai</div>
+                        <div class="area-item">Oxnard</div>
+                        <div class="area-item">Port Hueneme</div>
+                        <div class="area-item">San Buenaventura (Ventura)</div>
+                        <div class="area-item">Santa Paula</div>
+                        <div class="area-item">Simi Valley</div>
+                        <div class="area-item">Thousand Oaks</div>
+                    </div>
+                    <p><em>Plus communities including Oak Park, Oak View, Piru, Point Mugu, Santa Rosa Valley, Saticoy, Somis, and Newbury Park</em></p>
+                </div>
+            </div>
+
+            <div id="san-bernardino-county" class="county-section">
+                <div class="county-section-content">
+                    <h3>San Bernardino County</h3>
+                    <p>We serve the western and central portions of San Bernardino County within our 120-mile radius:</p>
+                    <div class="areas-list">
+                        <div class="area-item">Chino</div>
+                        <div class="area-item">Chino Hills</div>
+                        <div class="area-item">Colton</div>
+                        <div class="area-item">Fontana</div>
+                        <div class="area-item">Grand Terrace</div>
+                        <div class="area-item">Highland</div>
+                        <div class="area-item">Loma Linda</div>
+                        <div class="area-item">Montclair</div>
+                        <div class="area-item">Ontario</div>
+                        <div class="area-item">Rancho Cucamonga</div>
+                        <div class="area-item">Redlands</div>
+                        <div class="area-item">Rialto</div>
+                        <div class="area-item">San Bernardino</div>
+                        <div class="area-item">Twentynine Palms</div>
+                        <div class="area-item">Upland</div>
+                        <div class="area-item">Victorville</div
+                        <div class="area-item">Yucaipa</div>
+                        <div class="area-item">Yucca Valley</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="riverside-county" class="county-section">
+                <div class="county-section-content">
+                    <h3>Riverside County</h3>
+                    <p>We serve the western and central portions of Riverside County within our 120-mile radius, including the Coachella Valley:</p>
+                    <div class="areas-list">
+                        <div class="area-item">Banning</div>
+                        <div class="area-item">Beaumont</div>
+                        <div class="area-item">Cathedral City</div
+                        <div class="area-item">Coachella</div>
+                        <div class="area-item">Corona</div>
+                        <div class="area-item">Desert Hot Springs</div>
+                        <div class="area-item">Eastvale</div>
+                        <div class="area-item">Hemet</div>
+                        <div class="area-item">Indian Wells</div>
+                        <div class="area-item">Indio</div>
+                        <div class="area-item">Jurupa Valley</div>
+                        <div class="area-item">Lake Elsinore</div>
+                        <div class="area-item">La Quinta</div>
+                        <div class="area-item">Menifee</div
+                        <div class="area-item">Moreno Valley</div>
+                        <div class="area-item">Murrieta</div>
+                        <div class="area-item">Norco</div>
+                        <div class="area-item">Palm Desert</div>
+                        <div class="area-item">Palm Springs</div>
+                        <div class="area-item">Perris</div>
+                        <div class="area-item">Rancho Mirage</div>
+                        <div class="area-item">Riverside</div>
+                        <div class="area-item">Temecula</div
+                        <div class="area-item">Wildomar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <h2>Why Choose Roll Up Rentals for Your LA Area Project?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>Local Expertise</h3>
+                    <p>With over 13 years serving the Greater Los Angeles area, we understand the unique requirements, regulations, and logistics of each community we serve.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Fast Response Times</h3>
+                    <p>Our strategic location and extensive fleet ensure quick delivery and pickup times throughout our 120-mile service radius.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Knowledge of Local Regulations</h3>
+                    <p>We're familiar with permit requirements, parking restrictions, and municipal codes across all the cities and counties we serve.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Competitive Pricing</h3>
+                    <p>Our efficient operations allow us to offer competitive rates regardless of your location within our service area.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Reliable Service</h3>
+                    <p>We pride ourselves on being a dependable partner for contractors, businesses, and residents throughout Southern California.</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Environmental Responsibility</h3>
+                    <p>We comply with all local environmental regulations and strive for responsible waste management practices in every community we serve.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Service Your Location?</h2>
+            <p>If you're within 120 miles of Downtown Los Angeles, we can service your equipment rental needs. Get a quick quote or check availability for your specific location.</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary">Get a Quote</a>
+                <a href="tel:+1-800-RAPID-WASTE" class="btn-secondary">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Roll Up Rentals</h3>
+                    <p>Serving All of Greater Los Angeles</p>
+                    <p>Phone: 1-800-RAPID-WASTE</p>
+                    <p>Email: info@rolluprentals.com</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="dumpster-rentals.html">Dumpster Rentals</a></li>
+                        <li><a href="storage-containers.html">Storage Containers</a></li>
+                        <li><a href="mobile-offices.html">Mobile Offices</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Roll Up Rentals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+            
+            mobileToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Roll Up Rentals - Get a Quote or Request Service</title>
+    <meta name="description" content="Contact Roll Up Rentals for dumpster, storage container, and mobile office rentals in Los Angeles. Get fast quotes and immediate service from our experienced team.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        header .logo h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        header .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(59, 130, 246, 0.8)), 
+                      url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .phone-highlight {
+            display: block;
+            background: #ffcc00;
+            color: #1e3a8a;
+            padding: 12px 20px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border-radius: 30px;
+            margin: 1.5rem 0;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .btn-primary, .btn-secondary {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: #ffcc00;
+            color: #1e3a8a;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
+            background: #ffd633;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                background: rgba(30, 58, 138, 0.95);
+                width: 80%;
+                max-width: 300px;
+                height: calc(100vh - 70px);
+                flex-direction: column;
+                padding: 2rem;
+                transition: right 0.3s ease;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        .content-section {
+            padding: 3rem 0;
+            background: white;
+        }
+        
+        .content-section h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1e3a8a;
+            font-size: 2.2rem;
+        }
+        
+        .content-section h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #ffcc00;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .contact-info {
+            background: #f8f9ff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid #ffcc00;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid #3b82f6;
+            transition: transform 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+        
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .info-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .info-card p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .info-card .highlight {
+            display: block;
+            background: #ffcc00;
+            color: #1e3a8a;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin: 2rem 0;
+        }
+        
+        .contact-form h2 {
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1e3a8a;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-btn {
+            background: #ffcc00;
+            color: #1e3a8a;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
+            background: #ffd633;
+        }
+        
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+        
+        .service-selection {
+            background: #f8f9ff;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .service-selection h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .service-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .service-option {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid #eee;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .service-option:hover {
+            border-color: #ffcc00;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+        
+        .service-option.selected {
+            border-color: #ffcc00;
+            background: #fff9e6;
+        }
+        
+        .service-option h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .service-option p {
+            color: #666;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .service-option .icon {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #3b82f6;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .experience-badge {
+            background: linear-gradient(135deg, #ffcc00, #ffd633);
+            color: #1e3a8a;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+            margin: 1.5rem 0;
+        }
+        
+        .footer {
+            background: #1e3a8a;
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer h3 {
+            margin-bottom: 1.5rem;
+            color: #ffcc00;
+        }
+        
+        .footer ul {
+            list-style: none;
+        }
+        
+        .footer li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .info-grid,
+            .service-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section {
+                padding: 2rem 0;
+            }
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #c3e6cb;
+            margin: 2rem 0;
+            text-align: center;
+            display: none;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div name="&#34;container&#34;">
+            <nav>
+                <div class="logo">
+                    <div>🗑️</div>
+                    <div>
+                        <h1>Roll Up Rentals</h1>
+                        <p>LA's Trusted Rental Experts</p>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dumpster-rentals.html">Dumpster Rentals</a></li>
+                    <li><a href="storage-containers.html">Storage Containers</a></li>
+                    <li><a href="mobile-offices.html">Mobile Offices</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content container">
+            <h2>Get in Touch with Roll Up Rentals</h2>
+            <p>Ready to rent dumpsters, storage containers, or mobile offices? Our team is standing by to help.</p>
+            <div class="phone-highlight">📞 CALL NOW FOR IMMEDIATE SERVICE: (323) 555-RENT</div>
+            <div style="text-align: center; margin-top: 1rem;">
+                <a href="tel:+13235557368" class="btn-primary">CALL NOW FOR PRICING</a>
+                <button type="button" class="btn-secondary" id="showForm">GET A QUOTE ONLINE</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h1>Contact Us</h1>
+            
+            <div class="contact-info">
+                <h2>How to Reach Us</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <h3>Phone</h3>
+                        <p>Speak directly with our experienced team for immediate assistance, quotes, and scheduling.</p>
+                        <div class="highlight">(323) 555-RENT (7368)</div>
+                        <p>Available Monday-Friday: 6:00 AM - 6:00 PM<br>
+                           Saturday: 7:00 AM - 4:00 PM<br>
+                           Emergency after-hours support available</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">📧</div>
+                        <h3>Email</h3>
+                        <p>Send us your rental inquiries and we'll respond promptly with detailed quotes and availability.</p>
+                        <div class="highlight">info@rolluprentals.com</div>
+                        <p>Typical response time: Within 2 hours during business hours</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h3>Service Area</h3>
+                        <p>We proudly serve the entire Greater Los Angeles area with our full range of rental services.</p>
+                        <div class="highlight">Los Angeles & Surrounding Counties</div>
+                        <p>Los Angeles, Orange, Ventura, Riverside, and San Bernardino counties</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">⏰</div>
+                        <h3>Hours of Operation</h3>
+                        <p>Our team is available to assist you during these hours for quotes, scheduling, and support.</p>
+                        <div class="highlight">Mon-Fri 6AM-6PM • Sat 7AM-4PM</div>
+                        <p>Emergency services available outside regular hours for urgent contractor needs</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="contactFormContainer" style="display: none;">
+                <div class="contact-form">
+                    <h2>Get a Free Quote</h2>
+                    <p>Tell us about your project and we'll provide a detailed, no-obligation quote within 2 hours.</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name*</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" placeholder="Your company or organization">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number*</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="Your best contact number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address*</label>
+                            <input type="email" id="email" name="email" required placeholder="Your email address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Needed*</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select the service you need</option>
+                                <option value="dumpster">Dumpster Rental</option>
+                                <option value="storage">Storage Container</option>
+                                <option value="office">Mobile Office</option>
+                                <option value="multiple">Multiple Services</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="location">Project Location*</label>
+                            <input type="text" id="location" name="location" required placeholder="Job site address or area">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="timeline">When Do You Need It?</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">When do you need delivery?</option>
+                                <option value="today">Today</option>
+                                <option value="tomorrow">Tomorrow</option>
+                                <option value="this-week">This Week</option>
+                                <option value="next-week">Next Week</option>
+                                <option value="flexible">Flexible Schedule</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="details">Project Details*</label>
+                            <textarea id="details" name="details" required placeholder="Please describe your project, including size/duration needs and any special requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">GET MY FREE QUOTE</button>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: #666; text-align: center;">
+                            *Required fields. We respect your privacy and will never share your information.
+                        </p>
+                    </form>
+                </div>
+            </div>
+            
+            <div id="successMessage" class="success-message">
+                <h3>Thank You!</h3>
+                <p>Your quote request has been submitted successfully. Our team will review your information and contact you within 2 hours with a detailed, no-obligation quote.</p>
+                <p><strong>For immediate assistance, call us now:</strong> (323) 555-RENT</p>
+            </div>
+            
+            <div class="service-selection">
+                <h2>Which Service Do You Need?</h2>
+                <p>Select the service(s) you're interested in to learn more about our options:</p>
+                <div class="service-options">
+                    <div class="service-option" data-service="dumpster">
+                        <div class="icon">🗑️</div>
+                        <h3>Dumpster Rentals</h3>
+                        <p>Roll-off containers for construction debris, cleanouts, and waste management</p>
+                    </div>
+                    <div class="service-option" data-service="storage">
+                        <div class="icon">📦</div>
+                        <h3>Storage Containers</h3>
+                        <p>Secure, weatherproof storage for tools, equipment, and materials</p>
+                    </div>
+                    <div class="service-option" data-service="office">
+                        <div class="icon">🏢</div>
+                        <h3>Mobile Offices</h3>
+                        <p>Climate-controlled workspace for project management and meetings</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Need Immediate Assistance?</h2>
+            <p>Don't wait - our team is ready to help you get the equipment you need for your project today.</p>
+            <div class="phone-highlight">📞 CALL NOW FOR FASTEST SERVICE: (323) 555-RENT</div>
+            <div class="cta-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="tel:+13235557368" class="btn-primary">CALL NOW FOR PRICING</a>
+                <button type="button" class="btn-secondary" id="showFormBottom">GET A QUOTE ONLINE</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Roll Up Rentals</h3>
+                    <p>Serving Los Angeles County with pride for over 13 years. We're dedicated to providing contractors with the reliable rental solutions they need to succeed.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="dumpster-rentals.html">Dumpster Rentals</a></li>
+                        <li><a href="storage-containers.html">Storage Containers</a></li>
+                        <li><a href="mobile-offices.html">Mobile Offices</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="tel:+13235557368">Call Now: (323) 555-RENT</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contact Information</h3>
+                    <ul>
+                        <li>📞 Phone: (323) 555-RENT (7368)</li>
+                        <li>📧 Email: info@rolluprentals.com</li>
+                        <li>📍 Service Area: Los Angeles, Orange, Ventura, Riverside, San Bernardino counties</li>
+                        <li>🕒 Hours: Mon-Fri 6:00 AM - 6:00 PM, Sat 7:00 AM - 4:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Roll Up Rentals. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+            const showFormBtn = document.getElementById('showForm');
+            const showFormBottom = document.getElementById('showFormBottom');
+            const contactFormContainer = document.getElementById('contactFormContainer');
+            const contactForm = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+            const serviceOptions = document.querySelectorAll('.service-option');
+            
+            // Mobile menu toggle
+            mobileToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+            
+            // Show/hide contact form
+            showFormBtn.addEventListener('click', function() {
+                contactFormContainer.style.display = contactFormContainer.style.display === 'none' ? 'block' : 'none';
+                if (contactFormContainer.style.display === 'block') {
+                    contactForm.reset();
+                    successMessage.classList.remove('show');
+                }
+            });
+            
+            showFormBottom.addEventListener('click', function() {
+                contactFormContainer.style.display = contactFormContainer.style.display === 'none' ? 'block' : 'none';
+                if (contactFormContainer.style.display === 'block') {
+                    contactForm.reset();
+                    successMessage.classList.remove('show');
+                }
+            });
+            
+            // Service option selection
+            serviceOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options
+                    serviceOptions.forEach(opt => opt.classList.remove('selected'));
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                    
+                    // Update form selection
+                    const serviceValue = this.dataset.service;
+                    const serviceSelect = document.getElementById('service');
+                    if (serviceValue === 'multiple') {
+                        serviceSelect.value = 'multiple';
+                    } else {
+                        serviceSelect.value = serviceValue;
+                    }
+                });
+            });
+            
+            // Form submission
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                // Here you would typically send this data to a server
+                // For this demo, we'll simulate a successful submission
+                
+                // Hide form and show success message
+                this.style.display = 'none';
+                successMessage.classList.add('show');
+                
+                // Reset form for next use
+                setTimeout(() => {
+                    this.reset();
+                    this.style.display = 'block';
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>

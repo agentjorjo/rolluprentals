@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Office Rentals Los Angeles - Roll Up Rentals</title>
+    <meta name="description" content="Climate-controlled mobile office rentals in Los Angeles for construction sites, events, and temporary workspace needs. 13+ years experience serving LA contractors.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        header .logo h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        header .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(59, 130, 246, 0.8)), 
+                      url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .phone-highlight {
+            display: block;
+            background: #ffcc00;
+            color: #1e3a8a;
+            padding: 12px 20px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border-radius: 30px;
+            margin: 1.5rem 0;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .btn-primary, .btn-secondary {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: #ffcc00;
+            color: #1e3a8a;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
+            background: #ffd633;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                background: rgba(30, 58, 138, 0.95);
+                width: 80%;
+                max-width: 300px;
+                height: calc(100vh - 70px);
+                flex-direction: column;
+                padding: 2rem;
+                transition: right 0.3s ease;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        .content-section {
+            padding: 3rem 0;
+            background: white;
+        }
+        
+        .content-section h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1e3a8a;
+            font-size: 2.2rem;
+            margin-top: 1rem;
+        }
+        
+        .content-section h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #ffcc00;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .service-overview {
+            background: #f8f9ff;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .office-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .office-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid #ffcc00;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .office-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .office-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .office-card .specifications {
+            background: #e8f4fd;
+            padding: 0.8rem 1.2rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .office-card ul {
+            list-style: none;
+        }
+        
+        .office-card li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        
+        .office-card li:last-child {
+            border-bottom: none;
+        }
+        
+        .office-card li::before {
+            content: "✓";
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-card {
+            background: #f8f9ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .feature-card h4 {
+            margin-bottom: 0.8rem;
+            color: #1e3a8a;
+        }
+        
+        .pricing-section {
+            background: #f8f9ff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .pricing-table th,
+        .pricing-table td {
+            padding: 1.2rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pricing-table th {
+            background: #1e3a8a;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .pricing-table tr:nth-child(even) {
+            background: #f8f9ff;
+        }
+        
+        .pricing-table tr:hover {
+            background: #f0f7ff;
+        }
+        
+        .pricing-table .popular {
+            background: #fff9e6;
+            border: 2px solid #ffcc00;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .experience-badge {
+            background: linear-gradient(135deg, #ffcc00, #ffd633);
+            color: #1e3a8a;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+            margin: 1.5rem 0;
+        }
+        
+        .footer {
+            background: #1e3a8a;
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer h3 {
+            margin-bottom: 1.5rem;
+            color: #ffcc00;
+        }
+        
+        .footer ul {
+            list-style: none;
+        }
+        
+        .footer li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .office-types,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-table th,
+            .pricing-table td {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .content-section {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div>🗑️</div>
+                    <div>
+                        <h1>Roll Up Rentals</h1>
+                        <p>LA's Trusted Rental Experts</p>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dumpster-rentals.html">Dumpster Rentals</a></li>
+                    <li><a href="storage-containers.html">Storage Containers</a></li>
+                    <li><a href="mobile-offices.html" class="active">Mobile Offices</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content container">
+            <h2>Climate-Controlled Mobile Office Rentals in Los Angeles</h2>
+            <p>Comfortable, professional workspace solutions for construction sites and events</p>
+            <div class="phone-highlight">📞 CALL NOW FOR PRICING: (323) 555-RENT</div>
+            <div style="text-align: center; margin-top: 1rem;">
+                <a href="tel:+13235557368" class="btn-primary">CALL NOW FOR PRICING</a>
+                <a href="contact.html" class="btn-secondary">GET A QUOTE</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h1>Mobile Office Rentals</h1>
+            
+            <div class="service-overview">
+                <p>Roll Up Rentals provides climate-controlled mobile office units throughout Los Angeles County. With 13+ years of experience serving contractors, construction companies, and event organizers, we understand the need for comfortable, professional workspace solutions on job sites and at temporary locations.</p>
+                <p>Our mobile offices provide a comfortable, productive environment for project management, meetings, administrative work, and temporary workspace needs. All units are delivered, set up, and ready to use when they arrive at your location.</p>
+            </div>
+            
+            <h2>Mobile Office Options</h2>
+            <div class="office-types">
+                <div class="office-card">
+                    <h3>8-Foot Mobile Office</h3>
+                    <div class="specifications">8' L × 6' W × 8' H</div>
+                    <ul>
+                        <li>Heating and air conditioning for year-round comfort</li>
+                        <li>Electrical outlets and lighting throughout</li>
+                        <li>Insulated walls and ceiling for energy efficiency</li>
+                        <li>Windows for natural light and ventilation</li>
+                        <li>Lockable door with security features</li>
+                        <li>Can accommodate 2-4 people comfortably</li>
+                        <li>Perfect for: Small project management, tool check-out, break area</li>
+                        <li>Popular with: General contractors, specialty trades, landscapers</li>
+                    </ul>
+                </div>
+                
+                <div class="office-card">
+                    <h3>10-Foot Mobile Office</h3>
+                    <div class="specifications">10' L × 8' W × 8' H</div>
+                    <ul>
+                        <li>Heating and air conditioning for year-round comfort</li>
+                        <li>Electrical outlets and lighting throughout</li>
+                        <li>Insulated walls and ceiling for energy efficiency</li>
+                        <li>Windows for natural light and ventilation</li>
+                        <li>Lockable door with security features</li>
+                        <li>Can accommodate 4-6 people comfortably</li>
+                        <li>Perfect for: Project offices, meeting rooms, administrative space</li>
+                        <li>Popular with: Construction managers, developers, engineering firms</li>
+                    </ul>
+                </div>
+                
+                <div class="office-card">
+                    <h3>12-Foot Mobile Office</h3>
+                    <div class="specifications">12' L × 8' W × 8' H</div>
+                    <ul>
+                        <li>Heating and air conditioning for year-round comfort</li>
+                        <li>Electrical outlets and lighting throughout</li>
+                        <li>Insulated walls and ceiling for energy efficiency</li>
+                        <li>Windows for natural light and ventilation</li
+                        <li>Lockable door with security features</li>
+                        <li>Can accommodate 6-8 people comfortably</li>
+                        <li>Built-in desk and storage options available</li>
+                        <li>Perfect for: Larger project offices, training rooms, conference space</li>
+                        <li>Popular with: Large contractors, government projects, commercial developers</li>
+                    </ul>
+                </div>
+                
+                <div class="office-card">
+                    <h3>16-Foot Mobile Office</h3>
+                    <div class="specifications">16' L × 8' W × 8' H</div>
+                    <ul>
+                        <li>Heating and air conditioning for year-round comfort</li>
+                        <li>Electrical outlets and lighting throughout</li>
+                        <li>Insulated walls and ceiling for energy efficiency</li>
+                        <li>Windows for natural light and ventilation</li>
+                        <li>Lockable door with security features</li>
+                        <li>Can accommodate 8-12 people comfortably</li>
+                        <li>Partition options for private offices and meeting rooms</li>
+                        <li>ADA-compliant options available</li>
+                        <li>Perfect for: Large project offices, corporate trailers, event headquarters</li>
+                        <li>Popular with: Major construction projects, corporate events, film productions</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h2>Key Features & Benefits</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">❄️🔥</div>
+                    <h4>Year-Round Climate Control</h4>
+                    <p>Efficient heating and air conditioning systems maintain comfortable temperatures regardless of outdoor conditions. Essential for productivity in LA's variable climate.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h4>Electrical & Lighting</h4>
+                    <p>Multiple electrical outlets throughout, overhead lighting, and options for additional circuits. Ready for computers, chargers, and office equipment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🪟</div>
+                    <h4>Natural Light & Ventilation</h4>
+                    <p>Windows provide natural light and can be opened for fresh air. Reduces reliance on artificial lighting and improves workplace comfort and morale.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h4>Security Features</h4>
+                    <p>Heavy-duty lockable doors, optional security systems, and durable construction protect your equipment, documents, and workspace.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📡</div>
+                    <h4>Technology Ready</h4>
+                    <p>Options for phone lines, internet connections, and cable TV hookups. Stay connected for business operations and communication needs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🪑</div>
+                    <h4>Furniture Options</h4>
+                    <p>Available with desks, chairs, tables, and storage solutions. Fully furnished options available for immediate use.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♿</div>
+                    <h4>Accessibility Options</h4>
+                    <p>ADA-compliant units available with wheelchair ramps, wider doors, and accessible interiors. Inclusive workspace solutions for all team members.</p>
+                </div>
+            </div>
+            
+            <h2>Transparent Pricing</h2>
+            <div class="pricing-section">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Office Size</th>
+                            <th>Delivery & Setup</th>
+                            <th>Daily Rate</th>
+                            <th>Weekly Rate</th>
+                            <th>Monthly Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>8-Foot Office</td>
+                            <td>Included</td>
+                            <td>$25-$35</td>
+                            <td>$150-$210</td>
+                            <td>$450-$630</td>
+                        </tr>
+                        <tr>
+                            <td>10-Foot Office</td>
+                            <td>Included</td>
+                            <td>$30-$40</td>
+                            <td>$180-$250</td>
+                            <td>$540-$750</td>
+                        </tr>
+                        <tr class="popular">
+                            <td>12-Foot Office</td>
+                            <td>Included</td>
+                            <td>$35-$45</td>
+                            <td>$210-$290</td>
+                            <td>$630-$870</td>
+                        </tr>
+                        <tr>
+                            <td>16-Foot Office</td>
+                            <td>Included</td>
+                            <td>$45-$60</td>
+                            <td>$270-$360</td>
+                            <td>$810-$1080</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><em>*Rates vary based on location, rental duration, season, and selected options. Delivery, setup, and pickup are included within our standard service area. Additional fees may apply for special electrical hookups, permits, or extended hours. Long-term discounts available for rentals of 3+ months. Furniture packages available at additional cost.</em></p>
+            </div>
+            
+            <h2>Common Uses for Mobile Offices</h2>
+            <div class="office-types">
+                <div class="office-card">
+                    <h3>Construction & Contracting</h3>
+                    <ul>
+                        <li>Project management offices on job sites</li>
+                        <li>Meeting rooms for client and team conferences</li>
+                        <li>Administrative offices for paperwork and documentation</li>
+                        <li>Break rooms and lunch areas for crew comfort</li>
+                        <li>Safety offices for tool box talks and training</li>
+                        <li>Quality control and inspection offices</li>
+                    </ul>
+                </div>
+                <div class="office-card">
+                    <h3>Events & Hospitality</h3>
+                    <ul>
+                        <li>Ticket offices and registration centers</li>
+                        <li>First aid stations and medical offices</li>
+                        <li>VIP lounges and hospitality suites</li>
+                        <li>Press rooms and media centers</li>
+                        <li>Control rooms for event operations</li>
+                        <li>Storage and equipment check-out areas</li>
+                    </ul>
+                </div>
+                <div class="office-card">
+                    <h3>Film & Entertainment</h3>
+                    <ul>
+                        <li>Production offices for film and TV shoots</li>
+                        <li>Makeup and wardrobe trailers</li>
+                        <li>Catering and craft services areas</li>
+                        <li>Editing and post-production suites</li>
+                        <li>Rehearsal spaces and preparation areas</li>
+                        <li>Location offices for remote shoots</li>
+                    </ul>
+                </div>
+                <div class="office-card">
+                    <h3>Disaster Relief & Emergency</h3>
+                    <ul>
+                        <li>Command centers for emergency response</li>
+                        <li>Medical triage and treatment areas</li>
+                        <li>Communication and coordination hubs</li>
+                        <li>Shelter management and registration offices</li>
+                        <li>Recovery and assistance centers</li>
+                        <li>Temporary government offices during emergencies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Need Professional Workspace for Your Project or Event?</h2>
+            <p>Get climate-controlled mobile office space delivered and set up ready to use. Perfect for project management, meetings, and temporary workspace needs.</p>
+            <div class="phone-highlight">📞 CALL NOW FOR IMMEDIATE DELIVERY: (323) 555-RENT</div>
+            <div class="cta-buttons" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="tel:+13235557368" class="btn-primary">CALL NOW FOR PRICING</a>
+                <a href="contact.html" class="btn-secondary">GET A FREE QUOTE</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Roll Up Rentals</h3>
+                    <p>Serving Los Angeles County with pride for over 13 years. We're dedicated to providing contractors with the reliable rental solutions they need to succeed.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="dumpster-rentals.html">Dumpster Rentals</a></li>
+                        <li><a href="storage-containers.html">Storage Containers</a></li>
+                        <li><a href="mobile-offices.html">Mobile Offices</a></li>
+                        <li><a href="tel:+13235557368">Call Now: (323) 555-RENT</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contact Information</h3>
+                    <ul>
+                        <li>📞 Phone: (323) 555-RENT (7368)</li>
+                        <li>📧 Email: info@rolluprentals.com</li>
+                        <li>📍 Service Area: Los Angeles, Orange, Ventura, Riverside, San Bernardino counties</li>
+                        <li>🕒 Hours: Mon-Fri 6:00 AM - 6:00 PM, Sat 7:00 AM - 4:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Roll Up Rentals. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+            
+            mobileToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

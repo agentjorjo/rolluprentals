@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Roll Up Rentals - LA's Trusted Equipment Rental Company Since 2011</title>
+    <meta name="description" content="Learn about Roll Up Rentals, a locally-owned Los Angeles equipment rental company serving Hollywood, Downtown LA, San Fernando Valley, West LA, South Bay and all LA County neighborhoods for over 13 years. Specializing in dumpster rentals, storage containers, and mobile offices.">
+    <meta name="keywords" content="Los Angeles equipment rental company, LA dumpster rental history, Hollywood storage containers, Downtown LA mobile offices, San Fernando Valley scissor lifts, West LA equipment rentals, South Bay waste management">
+    <!-- JSON-LD Structured Data for About Page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About Roll Up Rentals",
+      "description": "Learn about Roll Up Rentals, a locally-owned Los Angeles equipment rental company serving Hollywood, Downtown LA, San Fernando Valley, West LA, South Bay and all LA County neighborhoods for over 13 years.",
+      "author": {
+        "@type": "Organization",
+        "name": "Roll Up Rentals"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Roll Up Rentals",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://rolluprentals.com/logo.png"
+        }
+      }
+    }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        header .logo h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        header .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(59, 130, 246, 0.8)); 
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .about-us {
+            background: white;
+            padding: 3rem 0;
+        }
+        
+        .about-us h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .about-us p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .our-mission {
+            background: #f8f9ff;
+            padding: 3rem 0;
+        }
+        
+        .our-mission h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .our-mission p {
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .our-values {
+            background: white;
+            padding: 3rem 0;
+        }
+        
+        .our-values h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .value-item {
+            background: #f8f9ff;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid #3b82f6;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .value-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+        
+        .value-item h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+        
+        .value-item p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .why-choose-us {
+            background: #f8f9ff;
+            padding: 3rem 0;
+        }
+        
+        .why-choose-us h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .reason-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-left: 4px solid #ffcc00;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .reason-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+        
+        .reason-item h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+        
+        .reason-item p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .service-areas {
+            background: white;
+            padding: 3rem 0;
+        }
+        
+        .service-areas h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .service-areas p {
+            margin-bottom: 1.5rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .areas-list {
+            background: #f8f9ff;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        
+        .areas-list ul {
+            list-style: none;
+            columns: 2;
+            gap: 2rem;
+        }
+        
+        .areas-list li {
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .case-studies {
+            background: #f8f9ff;
+            padding: 3rem 0;
+        }
+        
+        .case-studies h2 {
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .case-study-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .case-study-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+        
+        .case-study-header {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            padding: 1.5rem;
+        }
+        
+        .case-study-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        
+        .case-study-location {
+            display: block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .case-study-content {
+            padding: 2rem;
+        }
+        
+        .case-study-content p {
+            margin-bottom: 1rem;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .case-study-content strong {
+            color: #333;
+        }
+        
+        .case-study-content ul {
+            margin-left: 1.5rem;
+        }
+        
+        .case-study-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonials {
+            background: white;
+            padding: 3rem 0;
+        }
+        
+        .testimonials h2 {
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: #f8f9ff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+        
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-content p {
+            font-style: italic;
+            color: #555;
+            line-height: 1.7;
+            position: relative;
+        }
+        
+        .testimonial-content p::before {
+            content: "“";
+            font-size: 3rem;
+            color: #ffcc00;
+            opacity: 0.3;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+        }
+        
+        .testimonial-content p::after {
+            content: "”";
+            font-size: 3rem;
+            color: #ffcc00;
+            opacity: 0.3;
+            position: absolute;
+            bottom: -20px;
+            right: -10px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .testimonial-author h4 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .footer {
+            background: #1e3a8a;
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer h3 {
+            margin-bottom: 1.5rem;
+            color: #ffcc00;
+        }
+        
+        .footer ul {
+            list-style: none;
+        }
+        
+        .footer li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .values-grid,
+            .reasons-grid,
+            .case-study-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .areas-list ul {
+                columns: 1;
+            }
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                background: rgba(30, 58, 138, 0.95);
+                width: 80%;
+                max-width: 300px;
+                height: calc(100vh - 70px);
+                flex-direction: column;
+                padding: 2rem;
+                transition: right 0.3s ease;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div>🗑️</div>
+                    <div>
+                        <h1>Roll Up Rentals</h1>
+                        <p>LA's Trusted Rental Experts</p>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dumpster-rentals.html">Dumpster Rentals</a></li>
+                    <li><a href="storage-containers.html">Storage Containers</a></li>
+                    <li><a href="mobile-offices.html">Mobile Offices</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="service-locations.html">Service Locations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>About Roll Up Rentals</h1>
+            <p>Serving Los Angeles County with reliable equipment rental solutions for over 13 years</p>
+        </div>
+    </section>
+
+    <section class="about-us">
+        <div class="container">
+            <h2>Our Story</h2>
+            <p>Founded in 2011, Roll Up Rentals began as a small dumpster rental service serving local contractors in the Los Angeles area. Over the past 13 years, we've grown to become a comprehensive equipment rental company, providing dumpster rentals, storage containers, and mobile offices to businesses throughout LA County.</p>
+            <p>Our commitment to reliable service, transparent pricing, and customer satisfaction has earned us a reputation as one of the most trusted equipment rental providers in the region.</p>
+        </div>
+    </section>
+
+    <section class="our-mission">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p>To provide Los Angeles contractors and businesses with reliable, affordable equipment rental solutions that help them complete their projects on time and on budget.</p>
+        </div>
+    </section>
+
+    <section class="our-values">
+        <div class="container">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>Reliability</h3>
+                    <p>We show up when we say we will and deliver equipment that works</p>
+                </div>
+                <div class="value-item">
+                    <h3>Integrity</h3>
+                    <p>Honest pricing with no hidden fees or surprises</p>
+                </div>
+                <div class="value-item">
+                    <h3>Service</h3>
+                    <p>Going above and beyond to ensure customer satisfaction</p>
+                </div>
+                <div class="value-item">
+                    <h3>Safety</h3>
+                    <p>Providing well-maintained, safe equipment for all applications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose-us">
+        <div class="container">
+            <h2>Why Choose Roll Up Rentals?</h2>
+            <div class="reasons-grid">
+                <div class="reason-item">
+                    <h3>Local Expertise</h3>
+                    <p>As a locally owned and operated LA company, we understand the unique needs of contractors in our area</p>
+                </div>
+                <div class="reason-item">
+                    <h3>Fast Response</h3>
+                    <p>Typical delivery within 24 hours for most equipment types</p>
+                </div>
+                <div class="reason-item">
+                    <h3>Quality Equipment</h3>
+                    <p>Well-maintained, modern equipment that meets safety standards</p>
+                </div>
+                <div class="reason-item">
+                    <h3>Flexible Terms</h3>
+                    <p>Daily, weekly, and monthly rental options to fit your project timeline</p>
+                </div>
+                <div class="reason-item">
+                    <h3>Competitive Pricing</h3>
+                    <p>Transparent pricing with no hidden fees</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-areas">
+        <div class="container">
+            <h2>Proudly Serving Los Angeles County</h2>
+            <p>We provide equipment rental services throughout Los Angeles County, including:</p>
+            <div class="areas-list">
+                <ul>
+                    <li>Downtown Los Angeles</li>
+                    <li>Hollywood & West Hollywood</li>
+                    <li>Santa Monica & Venice</li>
+                    <li>Long Beach & Harbor Area</li>
+                    <li>San Gabriel Valley</li
+                    <li>South Bay</li>
+                    <li>West LA & Culver City</li>
+                    <li>Pasadena & San Gabriel Valley</li>
+                    <li>East LA & Gateway Cities</li>
+                    <li>Valley Areas (San Fernando, Santa Clarita, Antelope Valley)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- LA Case Studies -->
+    <section class="case-studies">
+        <div class="container">
+            <h2>Recent Los Angeles Project Case Studies</h2>
+            <div class="case-study-grid">
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <h3>Hollywood Boulevard Mixed-Use Renovation</h3>
+                        <div class="case-study-location">Hollywood, CA</div>
+                    </div>
+                    <div class="case-study-content">
+                        <p><strong>Project:</strong> Renovation of historic building into retail spaces and residential units</p>
+                        <p><strong>Challenge:</strong> Limited street access, strict noise ordinances, and tight project timeline in busy Hollywood district</p>
+                        <p><strong>Solution:</strong> Roll Up Rentals provided:</p>
+                        <ul>
+                            <li>Two 15-yard dumpsters with scheduled twice-weekly pickups to accommodate limited storage space</li>
+                            <li>Early morning deliveries (5 AM) to avoid Hollywood Boulevard traffic restrictions</li>
+                            <li>Specialized equipment for navigating narrow side streets</li>
+                            <li>Documentation assistance for Hollywood-specific waste disposal permits</li>
+                        </ul>
+                        <p><strong>Results:</strong> Project completed 2 weeks ahead of schedule with zero traffic violation fines</p>
+                    </div>
+                </div>
+                
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <h3>Downtown LA Arts District Creative Campus</h3>
+                        <div class="case-study-location">Downtown Los Angeles, CA</div>
+                    </div>
+                    <div class="case-study-content">
+                        <p><strong>Project:</strong> Conversion of warehouse space into creative offices and artist studios</p>
+                        <p><strong>Challenge:</strong> Need for secure on-site storage of expensive equipment and materials during 8-month renovation</p>
+                        <p><strong>Solution:</strong> Roll Up Rentals provided:</p>
+                        <ul>
+                            <li>Three 40-foot high cube storage containers modified with shelving and electrical</li>
+                            <li>Weekly on-site inventory checks and security patrols</li>
+                            <li>Climate-controlled options for sensitive art supplies</li>
+                            <li>Flexible rental terms that accommodated project timeline changes</li>
+                        </ul>
+                        <p><strong>Results:</strong> Zero equipment theft or damage; materials retained 100% usability throughout project</p>
+                    </div>
+                </div>
+                
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <h3>San Fernando Valley Highway Expansion</h3>
+                        <div class="case-study-location">San Fernando Valley, CA</div>
+                    </div
+                    <div class="case-study-content">
+                        <p><strong>Project:</strong> Widening of major arterial road in the San Fernando Valley</p>
+                        <p><strong>Challenge:</strong> High-volume waste generation requiring efficient removal to maintain traffic flow</p>
+                        <p><strong>Solution:</strong> Roll Up Rentals provided:</p>
+                        <ul>
+                            <li>Four 40-yard dumpsters positioned strategically along construction zone</li>
+                            <li>Coordinated haul-away schedule with Caltrans-approved routes</li>
+                            <li>On-site waste segregation for recycling concrete and asphalt</li>
+                            <li>Real-time monitoring of dumpster fill levels to prevent overflows</li>
+                        </ul>
+                        <p><strong>Results:</strong> 95% recycling rate achieved; zero traffic delays due to waste management issues</p>
+                    </div>
+                </div>
+                
+                <div class="case-study-card>
+                    <div class="case-study-header">
+                        <h3>West LA Transit-Oriented Development</h3>
+                        <div class="case-study-location">West Los Angeles, CA</div>
+                    </div>
+                    <div class="case-study-content">
+                        <p><strong>Project:</strong> Mixed-use development near Expo Line station</p>
+                        <p><strong>Challenge:</strong> Need for temporary office space that could be easily relocated as construction phases progressed</p>
+                        <p><strong>Solution:</strong> Roll Up Rentals provided:</p>
+                        <ul>
+                            <li>Two 20-foot mobile offices with custom floor plans for project management teams</li>
+                            <li>Easy relocation service as construction moved between phases</li>
+                            <li>Full electrical and HVAC installations meeting West LA building codes</li>
+                            <li>ADA-compliant access ramps and facilities</li>
+                        </ul>
+                        <p><strong>Results:</strong> 30% reduction in administrative relocation costs; zero downtime during phase transitions</p>
+                    </div>
+                </div>
+                
+                <div class="case-study-card>
+                    <div class="case-study-header">
+                        <h3>South Bay Port Infrastructure Upgrade</h3>
+                        <div class="case-study-location">South Bay, CA</div>
+                    </div>
+                    <div class="case-study-content">
+                        <p><strong>Project:</strong> Modernization of cargo handling facilities at major South Bay port</p>
+                        <p><strong>Challenge:</strong> Strict environmental regulations and need for hazardous material separation</p>
+                        <p><strong>Solution:</strong> Roll Up Rentals provided:</p>
+                        <ul>
+                            <li>Specialized dumpsters for different waste streams (hazardous, recyclable, general)</li>
+                            <li>Regular compliance reporting for LA County environmental regulations</li>
+                            <li>Worker training on proper waste segregation procedures</li>
+                            <li>Emergency response capability for spill containment</li>
+                        </ul>
+                        <p><strong>Results:</strong> Perfect compliance record with zero environmental violations; recognized by port authority for exemplary waste management</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LA Customer Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Los Angeles Customers Are Saying</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card>
+                    <div class="testimonial-content">
+                        <p>"Roll Up Rentals kept our Hollywood renovation on schedule with timely 15-yard dumpster deliveries to our tight access site on Sunset Boulevard. Their knowledge of Hollywood parking restrictions and permit requirements saved us hours of hassle each day."</p>
+                        <div class="testimonial-author>
+                            <h4>Mike R., Hollywood</h4>
+                            <p>Renovation Contractor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card>
+                    <div class="testimonial-content">
+                        <p>"For our Downtown LA high-rise project, we needed reliable scissor lift rentals with quick response times. Roll Up Rentals delivered equipment to our Grand Avenue site within 4 hours of calling, and their local expertise navigating Downtown traffic was invaluable."</p>
+                        <div class="testimonial-author>
+                            <h4>Jennifer L., Downtown LA</h4>
+                            <p>Construction Project Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card>
+                    <div class="testimonial-content">
+                        <p>"We've been using Roll Up Rentals for storage container rentals at our San Fernando Valley manufacturing facility for over 5 years. Their flexible terms and knowledge of Valley-specific delivery requirements make them our go-to provider."</p>
+                        <div class="testimonial-author>
+                            <h4>Robert K., San Fernando Valley</h4>
+                            <p>Facilities Manager</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card>
+                    <div class="testimonial-content">
+                        <p>"When we needed mobile office solutions for our West LA commercial development, Roll Up Rentals provided customized units that met all Santa Monica-specific building codes. Their understanding of West LA requirements made the permitting process smooth."</p>
+                        <div class="testimonial-author>
+                            <h4>Sarah M., West LA</h4>
+                            <p>Development Coordinator</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card>
+                    <div class="testimonial-content">
+                        <p>"For our South Bay port expansion project, Roll Up Rentals handled all our waste management needs with 40-yard dumpsters. Their familiarity with LA County environmental regulations and South Bay area requirements ensured compliance throughout the project."</p>
+                        <div class="testimonial-author>
+                            <h4>Carlos D., South Bay</h4>
+                            <p>Project Superintendent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content>
+                <div class="footer-info>
+                    <h3>Roll Up Rentals</h3>
+                    <p>Serving Los Angeles County</p>
+                    <p>Phone: 1-800-RAPID-WASTE</p>
+                    <p>Email: info@rolluprentals.com</p>
+                </div>
+                <div class="footer-links>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="dumpster-rentals.html">Dumpster Rentals</a></li>
+                        <li><a href="storage-containers.html">Storage Containers</a></li>
+                        <li><a href="mobile-offices.html">Mobile Offices</a></li>
+                        <li><a href="about.html">About Us</a></li
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom>
+                <p>&copy; 2026 Roll Up Rentals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('nav ul');
+            
+            mobileToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

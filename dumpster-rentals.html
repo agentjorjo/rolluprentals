@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dumpster Rental Los Angeles - Roll-Off Dumpsters Serving Hollywood, Downtown LA & All LA Neighborhoods</title>
+    <meta name="description" content="Professional dumpster rental services in Los Angeles. We serve Hollywood, Downtown LA, San Fernando Valley, West LA, South Bay and all LA County neighborhoods with 3yd, 4yd, 6yd, 10yd, 15yd, and 40yd roll-off dumpsters for construction, renovation, and cleanout projects.">
+    <meta name="keywords" content="dumpster rental Los Angeles, Hollywood dumpster rental, Downtown LA roll-off dumpsters, San Fernando Valley waste containers, West LA construction dumpsters, South Bay debris removal, LA County dumpster services, 6 yard dumpster, 10 yard dumpster">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        header .logo h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        header .logo p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(59, 130, 246, 0.8)), 
+                      url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .phone-highlight {
+            display: block;
+            background: #ffcc00;
+            color: #1e3a8a;
+            padding: 12px 20px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border-radius: 30px;
+            margin: 1.5rem 0;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .btn-primary, .btn-secondary {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: #ffcc00;
+            color: #1e3a8a;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 204, 0, 0.6);
+            background: #ffd633;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                background: rgba(30, 58, 138, 0.95);
+                width: 80%;
+                max-width: 300px;
+                height: calc(100vh - 70px);
+                flex-direction: column;
+                padding: 2rem;
+                transition: right 0.3s ease;
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        .content-section {
+            padding: 3rem 0;
+            background: white;
+        }
+        
+        .content-section h1 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1e3a8a;
+            font-size: 2.2rem;
+        }
+        
+        .content-section h2 {
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #ffcc00;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .service-overview {
+            background: #f8f9ff;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .dumpster-sizes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .size-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 3px solid #ffcc00;
+            transition: transform 0.3s ease;
+        }
+        
+        .size-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+        
+        .size-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .size-card .size-label {
+            background: #ffcc00;
+            color: #1e3a8a;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .size-card ul {
+            list-style: none;
+        }
+        
+        .size-card li {
+            padding: 0.4rem 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .size-card li:last-child {
+            border-bottom: none;
+        }
+        
+        .size-card li::before {
+            content: "✓";
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .price-table th,
+        .price-table td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .price-table th {
+            background: #1e3a8a;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .price-table tr:nth-child(even) {
+            background: #f8f9ff;
+        }
+        
+        .price-table tr:hover {
+            background: #f0f7ff;
+        }
+        
+        .price-table .highlight {
+            background: #fff9e6;
+            font-weight: bold;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .experience-badge {
+            background: linear-gradient(135deg, #ffcc00, #ffd633);
+            color: #1e3a8a;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+            margin: 1.5rem 0;
+        }
+        
+        .footer {
+            background: #1e3a8a;
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer h3 {
+            margin-bottom: 1.5rem;
+            color: #ffcc00;
+        }
+        
+        .footer ul {
+            list-style: none;
+        }
+        
+        .footer li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .price-table th,
+            .price-table td {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .content-section {
+                padding: 2rem 0;
+            }
+        }
+        
+        .la-service-areas {
+            background: #f8f9ff;
+            padding: 3rem 0;
+        }
+        
+        .la-service-areas h2 {
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .la-service-areas p {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #555;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .la-area-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .la-area-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+        
+        .la-area-card h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .what-you-can-dispose {
+            background: white;
+            padding: 3rem 0;
+        }
+        
+        .what-you-can-dispose h2 {
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .disposal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .accepted, .not-accepted {
+            background: #f8f9ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+        
+        .accepted h3, .not-accepted h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .accepted h3::before {
+            content: "✅";
+        }
+        
+        .not-accepted h3::before {
+            content: "❌";
+        }
+        
+        .accepted ul, .not-accepted ul {
+            list-style: none;
+        }
+        
+        .accepted li, .not-accepted li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .accepted li:last-child, .not-accepted li:last-child {
+            border-bottom: none;
+        }
+        
+        .rental-process {
+            background: #f8f9ff;
+            padding: 3rem 0;
+        }
+        
+        .rental-process h2 {
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .step {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .step-number {
+            background: #ffcc00;
+            color: #1e3a8a;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0 auto 1rem;
+        }
+        
+        .step h3 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq {
+            background: white;
+            padding: 3rem 0;
+        }
+        
+        .faq h2 {
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .faq-item {
+            background: #f8f9ff;
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .faq-item h3 {
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .quote-form {
+            background: #f8f9ff;
+            padding: 3rem 0;
+        }
+        
+        .quote-form h2 {
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .quote-form form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        }
+        
+        .quote-form .btn-primary {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .form-note {
+            text-align: center;
+            margin-top: 1rem;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .footer-info h3 {
+            color: #ffcc00;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-info p {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <div>🗑️</div>
+                    <div>
+                        <h1>Roll Up Rentals</h1>
+                        <p>LA's Trusted Rental Experts</p>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dumpster-rentals.html" class="active">Dumpster Rentals</a></li>
+                    <li><a href="storage-containers.html">Storage Containers</a></li>
+                    <li><a href="mobile-offices.html">Mobile Offices</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="service-locations.html">Service Locations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Los Angeles Skyline Banner -->
+    <section class="la-banner">
+        <div class="banner-content">
+            <h2>Serving Los Angeles Since 2013</h2>
+            <p>Roll Up Rentals - Your Trusted Partner for Equipment Rentals Across LA County</p>
+        </div>
+    </section>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Roll Up Rentals: Los Angeles' Premier Dumpster Rental Provider</h1>
+            <p>Fast, reliable service for contractors - 3yd, 4yd, 6yd, 10yd, 15yd, and 40yd roll-off dumpsters available</p>
+            <div class="cta-buttons">
+                <a href="tel:+1-800-RAPID-WASTE" class="btn-primary">CALL NOW FOR PRICING</a>
+                <a href="#quote-form" class="btn-secondary">Request a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="service-overview" class="service-overview">
+        <div class="container">
+            <h2>Specializing in Construction and Demolition Waste Management for LA Contractors</h2>
+            <p>We understand the unique needs of Los Angeles construction projects and provide reliable dumpster rental services to keep your job site clean and efficient. From Hollywood film studios to Downtown LA high-rises, we've got the local expertise to handle LA's specific waste management challenges.</p>
+        </div>
+    </section>
+
+    <section id="dumpster-sizes" class="dumpster-sizes">
+        <div class="container">
+            <h2>Dumpster Size Guide</h2>
+            <div class="size-grid">
+                <div class="size-card">
+                    <h3>3 Yard</h3>
+                    <p><strong>Dimensions:</strong> Approximately 6'L x 4'W x 4'H</p>
+                    <p><strong>Ideal For:</strong> Small residential cleanouts, landscaping debris, minor remodeling</p>
+                    <p><strong>Perfect For:</strong> Homeowners, small contractors, property maintenance</p>
+                    <a href="tel:+1-800-RAPID-WASTE" class="btn-primary">Call for 3yd Dumpster Pricing</a>
+                </div>
+                <div class="size-card">
+                    <h3>4 Yard</h3>
+                    <p><strong>Dimensions:</strong> Approximately 6'L x 4'W x 4.5'H</p>
+                    <p><strong>Ideal For:</strong> Small construction projects, roofing shingles, concrete cleanouts</p>
+                    <p><strong>Perfect For:</strong> Roofing contractors, small renovation teams</p>
+                    <a href="tel:+1-800-RAPID-WASTE" class="btn-primary">Call for 4yd Dumpster Pricing</a>
+                </div>
+                <div class="size-card">
+                    <h3>6 Yard</h3>
+                    <p><strong>Dimensions:</strong> Approximately 6'L x 4'W x 5'H</p>
+                    <p><strong>Ideal For:</strong> Medium residential cleanouts, small renovations, roofing projects</p>
+                    <p><strong>Perfect For:</strong> Property managers, landscaping contractors</p>
+                    <a href="tel:+1-800-RAPID-WASTE" class="btn-primary">Call for 6yd Dumpster Pricing</a>
+                </div>
+                <div class="size-card">
+                    <h3>10 Yard</h3>
+                    <p><strong>Dimensions:</strong> Approximately 12'L x 6'W x 4'H</p>
+                    <p><strong>Ideal For:</strong> Medium renovations, kitchen/bath remodels, flooring removal</p>
+                    <p><strong>Perfect For:</strong> General contractors, remodeling companies</p>
+                    <a href="tel:+1-800-RAPID-WASTE" class="btn-primary">Call for 10yd Dumpster Pricing</a>
+                </div>
+                <div class="size-card">
+                    <h3>15 Yard</h3>
+                    <p><strong>Dimensions:</strong> Approximately 12'L x 6'W x 4.5'H</p>
+                    <p><strong>Ideal For:</strong> Medium renovations, roofing projects, large cleanouts</p>
+                    <p><strong>Perfect For:</strong> General contractors, remodeling companies, property managers</p>
+                    <a href="tel:+1-800-RAPID-WASTE" class="btn-primary">Call for 15yd Dumpster Pricing</a>
+                </div>
+                <div class="size-card">
+                    <h3>40 Yard</h3>
+                    <p><strong>Dimensions:</strong> Approximately 22'L x 8'W x 8'H</p>
+                    <p><strong>Ideal For:</strong> Major construction, demolition, commercial cleanouts</p>
+                    <p><strong>Perfect For:</strong> Large contractors, demolition companies, commercial developers</p>
+                    <a href="tel:+1-800-RAPID-WASTE" class="btn-primary">Call for 40yd Dumpster Pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="la-service-areas" class="la-service-areas">
+        <div class="container">
+            <h2>Los Angeles Neighborhood-Specific Services</h2>
+            <p>We understand that each LA neighborhood has unique requirements and restrictions. Here's how we tailor our dumpster rental services to specific areas:</p>
+            <div class="service-grid">
+                <div class="la-area-card">
+                    <h3>Hollywood & West Hollywood</h3>
+                    <p><strong>Special Considerations:</strong> Strict parking regulations, film industry schedules, and entertainment district restrictions</p>
+                    <p><strong>Our Solutions:</strong> Early morning/late night deliveries, knowledge of Sunset Boulevard and Hollywood Blvd restrictions, coordination with film studio security, and expertise in navigating the Hollywood Hills terrain</p>
+                </div>
+                <div class="la-area-card">
+                    <h3>Downtown Los Angeles</h3>
+                    <p><strong>Special Considerations:</strong> High-rise construction limits, street closure permits, and persistent traffic congestion</p>
+                    <p><strong>Our Solutions:</strong> Experience with DTLA permit processes, relationships with local authorities for expedited approvals, vertical lift coordination for tight sites, and understanding of Historic Core restrictions</p>
+                </div>
+                <div class="la-area-card">
+                    <h3>San Fernando Valley</h3>
+                    <p><strong>Special Considerations:</strong> Residential area restrictions, valley-specific weather patterns, and industrial zone requirements</p>
+                    <p><strong>Our Solutions:</strong> Knowledge of SFV truck routes, experience with Valley Boulevard and Van Nuys Blvd restrictions, understanding of residential noise ordinances, and familiarity with Burbank-Glendale-Pasadena Airport area regulations</p>
+                </div>
+                <div class="la-area-card">
+                    <h3>West LA & Santa Monica</h3>
+                    <p><strong>Special Considerations:</strong> Strict environmental regulations, coastal zone requirements, and high-density urban restrictions</p>
+                    <p><strong>Our Solutions:</strong> Expertise in Santa Monica-specific waste diversion requirements, knowledge of West LA traffic patterns, familiarity with UCLA/Westwood area restrictions, and understanding of coastal development permits</p>
+                </div>
+                <div class="la-area-card">
+                    <h3>South Bay & Harbor Area</h3>
+                    <p><strong>Special Considerations:</strong> Port-related regulations, industrial zone requirements, and environmental compliance needs</p>
+                    <p><strong>Our Solutions:</strong> Experience with LA Port requirements, knowledge of Harbor Freeway restrictions, understanding of refinery area regulations, and expertise in handling port-related construction waste streams</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="what-you-can-dispose" class="what-you-can-dispose">
+        <div class="container">
+            <h2>What You Can Dispose Of</h2>
+            <div class="disposal-grid">
+                <div class="accepted">
+                    <h3>✅ Accepted Materials</h3>
+                    <ul>
+                        <li>Construction debris</li>
+                        <li>Drywall</li>
+                        <li>Wood</li>
+                        <li>Roofing materials</li>
+                        <li>Furniture</li>
+                        <li>Appliance</li>
+                        <li>Yard waste</li>
+                        <li>Concrete (in smaller amounts)</li>
+                    </ul>
+                </div>
+                <div class="not-accepted">
+                    <h3>❌ Not Accepted</h3>
+                    <ul>
+                        <li>Hazardous materials</li>
+                        <li>Chemicals</li>
+                        <li>Oils</li>
+                        <li>Solvents</li>
+                        <li>Tires</li>
+                        <li>Batteries</li>
+                        <li>Asbestos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rental-process" class="rental-process">
+        <div = "container">
+            <h2>Simple 3-Step Rental Process</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Call Us</h3>
+                    <p>Get immediate pricing and availability</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Deliver</h3>
+                    <p>Fast, reliable delivery to your LA job site</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>You Fill & We Pickup</h3>
+                    <p>We handle disposal, you focus on your project</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How fast can you deliver?</h3>
+                <p>Typically within 24 hours for LA area</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do I need to be present for delivery?</h3>
+                <p>No, as long as access is clear</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if I need the dumpster longer?</h3>
+                <p>Daily extension rates available</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you handle permits for street placement?</h3>
+                <p>Guidance provided, customer typically obtains</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="quote-form" class="quote-form">
+        <div class="container">
+            <h2>Request a Quote</h2>
+            <form>
+                <div class="form-group">
+                    <label for="service-type">Service Type</label>
+                    <select id="service-type" name="service-type">
+                        <option value="dumpster">Dumpster Rentals</option>
+                        <option value="storage">Storage Containers</option>
+                        <option value="mobile">Mobile Offices</option>
+                        <option value="lift">Scissor Lifts</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dumpster-size">Dumpster Size</label>
+                    <select id="dumpster-size" name="dumpster-size">
+                        <option value="3yd">3 Yard</option>
+                        <option value="4yd">4 Yard</option>
+                        <option value="6yd">6 Yard</option>
+                        <option value="10yd">10 Yard</option>
+                        <option value="15yd">15 Yard</option>
+                        <option value="40yd">40 Yard</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1">
+                </div>
+                <div class="form-group">
+                    <label for="duration">Rental Duration</label>
+                    <select id="duration" name="duration">
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label
+```xml
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="project-details">Project Details</label>
+                    <textarea id="project-details" name="project-details" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Get Your Quote</button>
+            </form>
+            <p class="form-note">Thank you! We'll contact you within 15 minutes during business hours.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Roll Up Rentals</h3>
+                    <p>Licensed & Insured | Serving LA Since 2013 | 5-Star Contractor Ratings</p>
+                    <p>Phone: 1-800-RAPID-WASTE</p>
+                    <p>Email: info@rolluprentals.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Roll Up Rentals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
